@@ -1,80 +1,130 @@
-# 2.0" 460×460 AMOLED QSPI module (CO5300) — documentation & samples
+<p align="left"><img alt="OSPTEK" src="./images/logo.png" width="200" /></p>
 
-**简体中文：** [`README.md`](README.md)
+<h1 align="center">OSPTEK 2.0″ AMOLED 460×460 (CO5300 · QSPI)</h1>
+
+<p align="center"><b>AMOLED module · QSPI · CO5300 · capacitive touch</b></p>
+
+<p align="center"><a href="./README.md">简体中文</a> | English</p>
+
+<p align="center">
+  <img alt="Size: 2.0 inch" src="https://img.shields.io/badge/Size-2.0%22-3498DB?style=flat-square" />
+  <img alt="Resolution: 460x460" src="https://img.shields.io/badge/Resolution-460%C3%97460-8E44AD?style=flat-square" />
+  <img alt="Interface: QSPI" src="https://img.shields.io/badge/Interface-QSPI-27AE60?style=flat-square" />
+  <img alt="Driver: CO5300" src="https://img.shields.io/badge/Driver-CO5300-E7352C?style=flat-square" />
+</p>
+
+<p align="center"><img alt="OSPTEK 2.0 inch 460×460 AMOLED QSPI module (CO5300) product image" src="./images/product.png" width="640" /></p>
+
+## Contents
+
+- [Overview](#overview)
+- [Specifications](#specifications)
+- [Sample projects](#sample-projects)
+- [Repository layout](#repository-layout)
+- [Resources](#resources)
+- [Buy](#buy)
+- [Support](#support)
 
 ---
 
-> This repository provides **sample projects** for this module, together with datasheets, specifications, and interface / bring-up documentation for selection reference and integration.
+## Overview
 
-## Product overview
+OSPTEK **2.0″ 460×460 AMOLED** is a **QSPI** color display module driven by **CO5300**, with capacitive touch (**CST820**). Suited to handheld devices, wearables, and compact HMI.
 
-| Item | Description |
-|:--|:--|
-| Module | 2.0-inch **AMOLED** panel, **460×460** resolution |
-| Interface | **QSPI** |
-| Driver IC | **CO5300** |
-| Spec ID | **`2.0-amoled-460x460-qspi-co5300`** is the common product designation in documentation |
+Spec ID (repository name): `2.0-amoled-460x460-qspi-co5300`
 
----
+Current module version: **AM200Q460460LK**. Electrical and mechanical details follow [`docs/AM_200_Q460460_LK_ed30462590.pdf`](./docs/AM_200_Q460460_LK_ed30462590.pdf).
+
+## Specifications
+
+| Item | Spec |
+| ---- | ---- |
+| Size | 2.0 inch |
+| Type | AMOLED (color) |
+| Resolution | 460×460 |
+| Interface | QSPI |
+| Driver IC | CO5300 |
+| Touch driver | CST820 |
+
+> Full outline, FPC definition, power, and timing follow the product datasheet / driver IC datasheet.
+
+## Sample projects
+
+| Description | Path |
+| ---- | ---- |
+| ESP32-S3 · CO5300 QSPI + LVGL8 | [`examples/esp32s3-idf5_co5300-qspi_lvgl8/`](./examples/esp32s3-idf5_co5300-qspi_lvgl8/) |
+| ESP32-S3 · CO5300 QSPI + esp-lvgl-adapter / LVGL8 | [`examples/esp32s3-idf5_co5300-qspi_esp-lvgl-adapter_lvgl8/`](./examples/esp32s3-idf5_co5300-qspi_esp-lvgl-adapter_lvgl8/) |
+| ESP32-S3 · CO5300 QSPI + esp-lvgl-adapter / LVGL9 | [`examples/esp32s3-idf5_co5300-qspi_esp-lvgl-adapter_lvgl9/`](./examples/esp32s3-idf5_co5300-qspi_esp-lvgl-adapter_lvgl9/) |
+| ESP32-S3 · LVGL8 + TE | [`examples/with-te/esp32s3-idf5_co5300-qspi_esp-lvgl-adapter_lvgl8_amoled-with-te/`](./examples/with-te/esp32s3-idf5_co5300-qspi_esp-lvgl-adapter_lvgl8_amoled-with-te/) |
+| ESP32-S3 · LVGL9 + TE | [`examples/with-te/esp32s3-idf5_co5300-qspi_esp-lvgl-adapter_lvgl9_amoled-with-te/`](./examples/with-te/esp32s3-idf5_co5300-qspi_esp-lvgl-adapter_lvgl9_amoled-with-te/) |
+| ESP32-S3 · EAF boot animation | [`examples/eaf/esp32s3-idf5_co5300-qspi_eaf-boot-animation_spiffs_lvgl9/`](./examples/eaf/esp32s3-idf5_co5300-qspi_eaf-boot-animation_spiffs_lvgl9/) |
+| ESP32-S3 · EAF player | [`examples/eaf/esp32s3-idf5_co5300-qspi_esp-lv-eaf-player_spiffs_lvgl9/`](./examples/eaf/esp32s3-idf5_co5300-qspi_esp-lv-eaf-player_spiffs_lvgl9/) |
+| ESP32-S3 · FreeType font | [`examples/freetype/esp32s3-idf5_co5300-qspi_esp-lv-freetype_spiffs_lvgl9/`](./examples/freetype/esp32s3-idf5_co5300-qspi_esp-lv-freetype_spiffs_lvgl9/) |
+| ESP32-S3 · JPG decoder | [`examples/jpg-decoder/esp32s3-idf5_co5300-qspi_esp-lv-decoder_spiffs_lvgl9/`](./examples/jpg-decoder/esp32s3-idf5_co5300-qspi_esp-lv-decoder_spiffs_lvgl9/) |
+| ESP32-S3 · Lottie player | [`examples/lottie/esp32s3-idf5_co5300-qspi_esp-lv-lottie-player_spiffs_lvgl9/`](./examples/lottie/esp32s3-idf5_co5300-qspi_esp-lv-lottie-player_spiffs_lvgl9/) |
 
 ## Repository layout
 
-### Top-level
+```text
+2.0-amoled-460x460-qspi-co5300/
+├── README.md
+├── README_EN.md
+├── MODULE_VERSION.md
+├── LICENSE
+├── images/          # README assets
+├── docs/            # datasheets, init, adapter, STEP
+└── examples/        # sample projects
+```
 
-| Path | Contents |
-|:--|:--|
-| `docs/` | Datasheets, specifications, interface and initialization documentation |
-| `examples/` | **Sample projects** grouped by feature |
+## Resources
 
-### `examples/` layout
+### Product files
 
-| Location | Description (internal package folder) |
-|:--|:--|
-| `examples/` root | **LVGL8** baseline, or **LVGL8 / LVGL9** with **esp-lvgl-adapter** |
-| `with-te/` | Tear-related samples (**屏幕防撕裂代码**) |
-| `eaf/` | EAF animation (**eaf动画代码**) |
-| `freetype/` | FreeType fonts (**freetype字体代码**) |
-| `jpg-decoder/` | JPG decode (**jpg解码代码**) |
-| `lottie/` | Lottie animation (**lottie动画代码**) |
+| Resource | Link |
+| ---- | ---- |
+| Product datasheet (AM200Q460460LK) | [`docs/AM_200_Q460460_LK_ed30462590.pdf`](./docs/AM_200_Q460460_LK_ed30462590.pdf) |
+| Driver IC datasheet (CO5300) | [`docs/CO_5300_Datasheet_V0_00_20230328_07edb82936.pdf`](./docs/CO_5300_Datasheet_V0_00_20230328_07edb82936.pdf) |
+| Touch IC datasheet (CST820) | [`docs/DS_CST_820_V1_2_e0543732ca.pdf`](./docs/DS_CST_820_V1_2_e0543732ca.pdf) |
+| Init sequence (text) | [`docs/code for AM200Q460460LK.txt`](./docs/code%20for%20AM200Q460460LK.txt) |
+| 2.0″ AMOLED adapter board (V2.0) | [`docs/PCB-2.0寸AMOLED屏转接板V2.0.pdf`](./docs/PCB-2.0%E5%AF%B8AMOLED%E5%B1%8F%E8%BD%AC%E6%8E%A5%E6%9D%BFV2.0.pdf) |
+| 3D model (STEP) | [`docs/AM_200_Q460460_LK_v15_0cd9a35740.step`](./docs/AM_200_Q460460_LK_v15_0cd9a35740.step) |
 
-### Sample project paths
+### Samples
 
-#### Baseline and esp-lvgl-adapter
+- [ESP32-S3 CO5300 QSPI + LVGL8](./examples/esp32s3-idf5_co5300-qspi_lvgl8/)
+- [ESP32-S3 CO5300 QSPI + LVGL8 (adapter)](./examples/esp32s3-idf5_co5300-qspi_esp-lvgl-adapter_lvgl8/)
+- [ESP32-S3 CO5300 QSPI + LVGL9 (adapter)](./examples/esp32s3-idf5_co5300-qspi_esp-lvgl-adapter_lvgl9/)
+- [ESP32-S3 LVGL8 + TE](./examples/with-te/esp32s3-idf5_co5300-qspi_esp-lvgl-adapter_lvgl8_amoled-with-te/)
+- [ESP32-S3 LVGL9 + TE](./examples/with-te/esp32s3-idf5_co5300-qspi_esp-lvgl-adapter_lvgl9_amoled-with-te/)
+- [ESP32-S3 EAF boot animation](./examples/eaf/esp32s3-idf5_co5300-qspi_eaf-boot-animation_spiffs_lvgl9/)
+- [ESP32-S3 EAF player](./examples/eaf/esp32s3-idf5_co5300-qspi_esp-lv-eaf-player_spiffs_lvgl9/)
+- [ESP32-S3 FreeType](./examples/freetype/esp32s3-idf5_co5300-qspi_esp-lv-freetype_spiffs_lvgl9/)
+- [ESP32-S3 JPG decoder](./examples/jpg-decoder/esp32s3-idf5_co5300-qspi_esp-lv-decoder_spiffs_lvgl9/)
+- [ESP32-S3 Lottie](./examples/lottie/esp32s3-idf5_co5300-qspi_esp-lv-lottie-player_spiffs_lvgl9/)
 
-| Description | Path |
-|:--|:--|
-| LVGL8 baseline | `examples/esp32s3-idf5_co5300-qspi_lvgl8/` |
-| esp-lvgl-adapter + LVGL8 | `examples/esp32s3-idf5_co5300-qspi_esp-lvgl-adapter_lvgl8/` |
-| esp-lvgl-adapter + LVGL9 | `examples/esp32s3-idf5_co5300-qspi_esp-lvgl-adapter_lvgl9/` |
+## Buy
 
-#### Tear-related (`with-te/`)
+<p align="center">
+  <a href="https://www.aliexpress.com/store/1105701619"><img alt="AliExpress store" src="https://img.shields.io/badge/AliExpress-Official_Store-FF6A00?style=for-the-badge" /></a>
+  &nbsp;&nbsp;
+  <a href="https://shop110742373.taobao.com/"><img alt="Taobao store" src="https://img.shields.io/badge/Taobao-Official_Store-FF6A00?style=for-the-badge" /></a>
+</p>
 
-| Description | Path |
-|:--|:--|
-| esp-lvgl-adapter + LVGL8 + AMOLED with TE | `examples/with-te/esp32s3-idf5_co5300-qspi_esp-lvgl-adapter_lvgl8_amoled-with-te/` |
-| esp-lvgl-adapter + LVGL9 + AMOLED with TE | `examples/with-te/esp32s3-idf5_co5300-qspi_esp-lvgl-adapter_lvgl9_amoled-with-te/` |
+**Overseas (AliExpress)**
 
-#### EAF (`eaf/`)
+- Store: [OSPTEK Official Store](https://www.aliexpress.com/store/1105701619)
 
-| Description | Path |
-|:--|:--|
-| EAF boot animation | `examples/eaf/esp32s3-idf5_co5300-qspi_eaf-boot-animation_spiffs_lvgl9/` |
-| EAF playback | `examples/eaf/esp32s3-idf5_co5300-qspi_esp-lv-eaf-player_spiffs_lvgl9/` |
+**China (Taobao)**
 
-#### FreeType (`freetype/`)
+- Store: [鱼鹰光电工厂店](https://shop110742373.taobao.com/)
 
-| Description | Path |
-|:--|:--|
-| FreeType font sample | `examples/freetype/esp32s3-idf5_co5300-qspi_esp-lv-freetype_spiffs_lvgl9/` |
+## Support
 
-#### JPG decode (`jpg-decoder/`)
+- Technical support / product inquiry: <luyu@osptek.com>
+- QQ group: **985881096**
+- Website: <https://osptek.com/>
+- Feel free to open an Issue in this repository with any questions
 
-| Description | Path |
-|:--|:--|
-| JPG decode sample | `examples/jpg-decoder/esp32s3-idf5_co5300-qspi_esp-lv-decoder_spiffs_lvgl9/` |
+---
 
-#### Lottie (`lottie/`)
-
-| Description | Path |
-|:--|:--|
-| Lottie animation sample | `examples/lottie/esp32s3-idf5_co5300-qspi_esp-lv-lottie-player_spiffs_lvgl9/` |
+<p align="center"><sub>© 2026 OSPTEK · Materials in this repository are licensed under CC BY 4.0</sub></p>
