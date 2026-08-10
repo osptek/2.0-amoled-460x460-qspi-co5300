@@ -2,7 +2,7 @@
 
 <h1 align="center">OSPTEK 2.0″ AMOLED 460×460（CO5300 · QSPI）</h1>
 
-<p align="center"><b>AMOLED 模组 · QSPI · CO5300 · 电容触摸</b></p>
+<p align="center"><b>AMOLED 模组 · QSPI · CO5300 · 多版本索引</b></p>
 
 <p align="center"><a href="./README_EN.md">English</a> | 简体中文</p>
 
@@ -13,101 +13,58 @@
   <img alt="Driver: CO5300" src="https://img.shields.io/badge/Driver-CO5300-E7352C?style=flat-square" />
 </p>
 
-<p align="center"><img alt="OSPTEK 2.0 寸 460×460 AMOLED QSPI 模组（CO5300）宣传图" src="./images/product.png" width="640" /></p>
-
 ## 目录
 
-- [产品简介](#产品简介)
-- [规格参数](#规格参数)
-- [示例工程](#示例工程)
-- [仓库结构](#仓库结构)
-- [相关资料](#相关资料)
+- [说明](#说明)
+- [版本一览](#版本一览)
+- [AM200Q460460LK](#am200q460460lk)
+- [如何切换分支](#如何切换分支)
 - [购买链接](#购买链接)
 - [技术支持](#技术支持)
 
 ---
 
-## 产品简介
+## 说明
 
-OSPTEK **2.0 寸 460×460 AMOLED** 是一款 **QSPI** 接口彩色显示模组，显示驱动为 **CO5300**，触摸驱动为 **CST820**。适合手持终端、穿戴与小型 HMI 等场景。
+本仓库收录 **2.0 寸 460×460 AMOLED（QSPI · CO5300）** 显示模组资料。
+
+**`main` 为导航页**（仓库默认分支）。下表可快速浏览各版本；点击「说明」跳转到本页下方的详细介绍。需要某一版本的完整内容时，请切换到对应**版本分支**（方法见下文）。
 
 规格标识（仓库名）：`2.0-amoled-460x460-qspi-co5300`
 
-当前模组版本：**AM200Q460460LK**。电气与外形细节以 [`docs/AM_200_Q460460_LK_ed30462590.pdf`](./docs/AM_200_Q460460_LK_ed30462590.pdf) 为准。
+---
 
-## 规格参数
+## 版本一览
 
-| 项目 | 规格 |
-| ---- | ---- |
-| 尺寸 | 2.0 英寸 |
-| 类型 | AMOLED（彩色） |
-| 分辨率 | 460×460 |
-| 接口 | QSPI |
-| 驱动 IC | CO5300 |
-| 触摸驱动 | CST820 |
+| 版本 | 宣传图 | 说明 |
+| ---- | ------ | ---- |
+| AM200Q460460LK | <img alt="AM200Q460460LK" src="./images/AM200Q460460LK.png" width="120" /> | [查看详情](#am200q460460lk) |
 
-> 完整外形尺寸、FPC 定义、供电与时序以产品规格书 / 驱动手册为准。
+---
 
-## 示例工程
+## AM200Q460460LK
 
-| 说明 | 路径 |
-| ---- | ---- |
-| ESP32-S3 · CO5300 QSPI + LVGL8 | [`examples/esp32s3-idf5_co5300-qspi_lvgl8/`](./examples/esp32s3-idf5_co5300-qspi_lvgl8/) |
-| ESP32-S3 · CO5300 QSPI + esp-lvgl-adapter / LVGL8 | [`examples/esp32s3-idf5_co5300-qspi_esp-lvgl-adapter_lvgl8/`](./examples/esp32s3-idf5_co5300-qspi_esp-lvgl-adapter_lvgl8/) |
-| ESP32-S3 · CO5300 QSPI + esp-lvgl-adapter / LVGL9 | [`examples/esp32s3-idf5_co5300-qspi_esp-lvgl-adapter_lvgl9/`](./examples/esp32s3-idf5_co5300-qspi_esp-lvgl-adapter_lvgl9/) |
-| ESP32-S3 · LVGL8 + TE 防撕裂 | [`examples/with-te/esp32s3-idf5_co5300-qspi_esp-lvgl-adapter_lvgl8_amoled-with-te/`](./examples/with-te/esp32s3-idf5_co5300-qspi_esp-lvgl-adapter_lvgl8_amoled-with-te/) |
-| ESP32-S3 · LVGL9 + TE 防撕裂 | [`examples/with-te/esp32s3-idf5_co5300-qspi_esp-lvgl-adapter_lvgl9_amoled-with-te/`](./examples/with-te/esp32s3-idf5_co5300-qspi_esp-lvgl-adapter_lvgl9_amoled-with-te/) |
-| ESP32-S3 · EAF 开机动画 | [`examples/eaf/esp32s3-idf5_co5300-qspi_eaf-boot-animation_spiffs_lvgl9/`](./examples/eaf/esp32s3-idf5_co5300-qspi_eaf-boot-animation_spiffs_lvgl9/) |
-| ESP32-S3 · EAF 播放 | [`examples/eaf/esp32s3-idf5_co5300-qspi_esp-lv-eaf-player_spiffs_lvgl9/`](./examples/eaf/esp32s3-idf5_co5300-qspi_esp-lv-eaf-player_spiffs_lvgl9/) |
-| ESP32-S3 · FreeType 字体 | [`examples/freetype/esp32s3-idf5_co5300-qspi_esp-lv-freetype_spiffs_lvgl9/`](./examples/freetype/esp32s3-idf5_co5300-qspi_esp-lv-freetype_spiffs_lvgl9/) |
-| ESP32-S3 · JPG 解码 | [`examples/jpg-decoder/esp32s3-idf5_co5300-qspi_esp-lv-decoder_spiffs_lvgl9/`](./examples/jpg-decoder/esp32s3-idf5_co5300-qspi_esp-lv-decoder_spiffs_lvgl9/) |
-| ESP32-S3 · Lottie 播放 | [`examples/lottie/esp32s3-idf5_co5300-qspi_esp-lv-lottie-player_spiffs_lvgl9/`](./examples/lottie/esp32s3-idf5_co5300-qspi_esp-lv-lottie-player_spiffs_lvgl9/) |
+<p align="center"><img alt="AM200Q460460LK" src="./images/AM200Q460460LK.png" width="320" /></p>
 
-## 仓库结构
+**说明：** 模组。
 
-```text
-2.0-amoled-460x460-qspi-co5300/
-├── README.md
-├── README_EN.md
-├── MODULE_VERSION.md
-├── LICENSE
-├── images/          # README 用图
-├── docs/            # 规格书、驱动手册、初始化、转接板、3D 等
-└── examples/        # 示例工程
-```
+---
 
-## 相关资料
+## 如何切换分支
 
-### 本产品资料
+完整产品资料在各**版本分支**中；`main` 仅作导航。
 
-| 资料 | 链接 |
-| ---- | ---- |
-| 产品规格书（AM200Q460460LK） | [`docs/AM_200_Q460460_LK_ed30462590.pdf`](./docs/AM_200_Q460460_LK_ed30462590.pdf) |
-| 驱动 IC 数据手册（CO5300） | [`docs/CO_5300_Datasheet_V0_00_20230328_07edb82936.pdf`](./docs/CO_5300_Datasheet_V0_00_20230328_07edb82936.pdf) |
-| 触摸 IC 数据手册（CST820） | [`docs/DS_CST_820_V1_2_e0543732ca.pdf`](./docs/DS_CST_820_V1_2_e0543732ca.pdf) |
-| 初始化序列（文本） | [`docs/code for AM200Q460460LK.txt`](./docs/code%20for%20AM200Q460460LK.txt) |
-| 2.0 寸 AMOLED 转接板（V2.0） | [`docs/PCB-2.0寸AMOLED屏转接板V2.0.pdf`](./docs/PCB-2.0%E5%AF%B8AMOLED%E5%B1%8F%E8%BD%AC%E6%8E%A5%E6%9D%BFV2.0.pdf) |
-| 3D 模型（STEP） | [`docs/AM_200_Q460460_LK_v15_0cd9a35740.step`](./docs/AM_200_Q460460_LK_v15_0cd9a35740.step) |
+- **网页：** 在仓库页左上角打开分支下拉框，选择与料号对应的版本分支即可。
+- **命令行：** 克隆本仓库后执行 `git checkout <版本分支名>`；若本地已有仓库，先 `git fetch` 再切换。
 
-### 示例工程
-
-- [ESP32-S3 CO5300 QSPI + LVGL8](./examples/esp32s3-idf5_co5300-qspi_lvgl8/)
-- [ESP32-S3 CO5300 QSPI + LVGL8（adapter）](./examples/esp32s3-idf5_co5300-qspi_esp-lvgl-adapter_lvgl8/)
-- [ESP32-S3 CO5300 QSPI + LVGL9（adapter）](./examples/esp32s3-idf5_co5300-qspi_esp-lvgl-adapter_lvgl9/)
-- [ESP32-S3 LVGL8 + TE](./examples/with-te/esp32s3-idf5_co5300-qspi_esp-lvgl-adapter_lvgl8_amoled-with-te/)
-- [ESP32-S3 LVGL9 + TE](./examples/with-te/esp32s3-idf5_co5300-qspi_esp-lvgl-adapter_lvgl9_amoled-with-te/)
-- [ESP32-S3 EAF 开机动画](./examples/eaf/esp32s3-idf5_co5300-qspi_eaf-boot-animation_spiffs_lvgl9/)
-- [ESP32-S3 EAF 播放](./examples/eaf/esp32s3-idf5_co5300-qspi_esp-lv-eaf-player_spiffs_lvgl9/)
-- [ESP32-S3 FreeType](./examples/freetype/esp32s3-idf5_co5300-qspi_esp-lv-freetype_spiffs_lvgl9/)
-- [ESP32-S3 JPG 解码](./examples/jpg-decoder/esp32s3-idf5_co5300-qspi_esp-lv-decoder_spiffs_lvgl9/)
-- [ESP32-S3 Lottie](./examples/lottie/esp32s3-idf5_co5300-qspi_esp-lv-lottie-player_spiffs_lvgl9/)
+---
 
 ## 购买链接
 
 <p align="center">
   <a href="https://shop110742373.taobao.com/"><img alt="淘宝官方店铺" src="https://img.shields.io/badge/淘宝-官方店铺-FF6A00?style=for-the-badge" /></a>
   &nbsp;&nbsp;
-  <a href="https://www.aliexpress.com/store/1105701619"><img alt="速卖通官方店铺" src="https://img.shields.io/badge/速卖通-官方店铺-FF6A00?style=for-the-badge" /></a>
+  <a href="https://www.aliexpress.com/store/1105701619"><img alt="速卖通官方店铺" src="https://img.shields.io/badge/速卖通-官方店铺-E62E04?style=for-the-badge&logo=aliexpress&logoColor=white" /></a>
 </p>
 
 **国内（淘宝）**
@@ -117,6 +74,8 @@ OSPTEK **2.0 寸 460×460 AMOLED** 是一款 **QSPI** 接口彩色显示模组�
 **海外（AliExpress）**
 
 - 店铺：[OSPTEK Official Store](https://www.aliexpress.com/store/1105701619)
+
+---
 
 ## 技术支持
 
