@@ -46,8 +46,7 @@
 
 <p align="center"><img alt="AM200Q460460LK" src="./images/AM200Q460460LK.png" width="320" /></p>
 
-**说明：** 模组。
-
+**说明：** 带触摸（CST820）。
 ---
 
 ## 如何切换分支

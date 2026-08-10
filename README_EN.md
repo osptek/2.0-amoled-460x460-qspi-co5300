@@ -46,8 +46,7 @@ Repo id: `2.0-amoled-460x460-qspi-co5300`
 
 <p align="center"><img alt="AM200Q460460LK" src="./images/AM200Q460460LK.png" width="320" /></p>
 
-**Notes:** Module.
-
+**Notes:** With touch (CST820).
 ---
 
 ## How to Switch Branches
