@@ -19,6 +19,7 @@
 
 - [Overview](#overview)
 - [Specifications](#specifications)
+- [Prebuilt firmware](#prebuilt-firmware)
 - [Sample projects](#sample-projects)
 - [Repository layout](#repository-layout)
 - [Resources](#resources)
@@ -48,6 +49,38 @@ Current module version: **AM200Q460460LK**. Electrical and mechanical details fo
 
 > Full outline, FPC definition, power, and timing follow the product datasheet / driver IC datasheet.
 
+## Prebuilt firmware
+
+Flash the merged image below to verify display and touch without building ESP-IDF.
+
+**Intended hardware:** this module (AM200Q460460LK) + the **ESP32-S3 Demo board**. Other MCUs / wiring need a different firmware or your own port.
+
+| Base board (ESP32-S3 Demo) | Adapter / module (AM200Q460460LK) | Assembled |
+| -------------------------- | --------------------------------- | --------- |
+| <img alt="ESP32-S3 Demo board" src="./images/esp32-s3-demo-board.png" width="220" /> | <img alt="AM200Q460460LK adapter front and back" src="./images/module-front-back.png" width="220" /> | <img alt="Module plugged into S3 Demo board" src="./images/assembled.png" width="220" /> |
+
+**Pin map**
+
+| Function | GPIO |
+| -------- | ---- |
+| LCD CS | 14 |
+| LCD PCLK (CLK) | 9 |
+| LCD DATA0 | 10 |
+| LCD DATA1 | 11 |
+| LCD DATA2 | 12 |
+| LCD DATA3 | 13 |
+| LCD RST | 15 |
+| TOUCH SCL | 42 |
+| TOUCH SDA | 41 |
+| TOUCH RST | 40 |
+| TOUCH INT | 39 |
+
+| File | Address | Notes |
+| ---- | ------- | ----- |
+| [`firmware/esp32s3-2.0-amoled-460x460-qspi-co5300-bringup.bin`](./firmware/esp32s3-2.0-amoled-460x460-qspi-co5300-bringup.bin) | `0x0` (merged) | Bringup for the S3 Demo board + this module |
+
+> Flash the merged image at **`0x0`**, not `0x10000`.
+
 ## Sample projects
 
 | Description | Path |
@@ -73,6 +106,7 @@ Current module version: **AM200Q460460LK**. Electrical and mechanical details fo
         ├── README_EN.md
         ├── images/
         ├── docs/
+        ├── firmware/
         └── examples/
 ```
 
@@ -88,6 +122,7 @@ Current module version: **AM200Q460460LK**. Electrical and mechanical details fo
 | Init sequence (text) | [`docs/code for AM200Q460460LK.txt`](./docs/code%20for%20AM200Q460460LK.txt) |
 | 2.0″ AMOLED adapter board (V2.0) | [`docs/PCB-2.0寸AMOLED屏转接板V2.0.pdf`](./docs/PCB-2.0%E5%AF%B8AMOLED%E5%B1%8F%E8%BD%AC%E6%8E%A5%E6%9D%BFV2.0.pdf) |
 | 3D model (STEP) | [`docs/AM_200_Q460460.step`](./docs/AM_200_Q460460.step) |
+| Prebuilt firmware (ESP32-S3 merged) | [`firmware/esp32s3-2.0-amoled-460x460-qspi-co5300-bringup.bin`](./firmware/esp32s3-2.0-amoled-460x460-qspi-co5300-bringup.bin) |
 
 ### Samples
 
